@@ -1,0 +1,54 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+#menu { margin:40px 0 0 150px; }
+#menu ul { list-style:none; }
+#menu ul li { display:inline; float:left; margin-bottom:20px; }
+
+#menu ul li a { padding:20px; background: rgba(22, 209, 222, 0.65) ; text-decoration: none; font: bold 14px Helvetica, Sans-Serif; letter-spacing: -1px; color: #402e16;
+    text-shadow: #eee 0px 0px 2px; }
+   /*first child sudo to round left corner */
+#menu ul li:first-child a { -moz-border-radius-topleft: 12px; -webkit-border-top-left-radius:12px; }
+   /* last child sudo to round right corner */
+#menu ul li:last-child a { -moz-border-radius-topright: 12px; -webkit-border-top-right-radius:12px; }
+
+ /* hover state - gradient ending at 0.9 */
+#menu ul li a:hover { -moz-box-shadow: 0 -5px 10px #777; -webkit-box-shadow: 0 -5px 10px #777;
+   background: -webkit-gradient(
+      linear, right bottom, left top, color-stop(0, rgba(60, 235, 235, 0.4)), color-stop(0.72, rgba(44, 190, 190, 0.82))) !important;
+   background: -moz-linear-gradient(
+      right bottom, rgb(13, 152, 180) 0%,rgb(13, 152, 180) 72%) !important;
+   background-color:rgbrgb(13, 152, 180) !important;
+   -moz-opacity:.90; filter:alpha(opacity=90); opacity:.90; }
+ 
+/* another RGBA background, now with an opacity of 0.8 */
+#menu ul li a.active { background: rgba(21, 190, 203, 0.67) !important; }
+
+/* main contents with RGBA background (same colour as active tab) and three rounded corners */
+#main { clear:both; background: rgba(13, 152, 180,0.8); width:500px; margin-left:150px;
+   -moz-border-radius-topright: 12px; -moz-border-radius-bottomright: 12px; -moz-border-radius-bottomleft: 12px;
+   -webkit-border-top-right-radius:12px; -webkit-border-bottom-right-radius:12px; -webkit-border-bottom-left-radius:12px;}
+   
+/* header with a text-shadow */
+#main h3 { text-transform:uppercase; padding:20px 0 0 20px; color:#eee; text-shadow: #000 0px 0px 2px; }
+#main p { padding-bottom:20px; color:#ddd; }
+  body{
+      background: url(<%= asset_path "wood3.jpg" %>);
+      
+   }
